@@ -140,6 +140,7 @@ app.put("/markUnComplete", (request, response) => {
     .catch((error) => console.error(error));
 });
 
+// setup the /deleteItem route, allowing us to delete an item in the db
 app.delete("/deleteItem", (request, response) => {
   // in the database collection "todos"
   db.collection("todos")
