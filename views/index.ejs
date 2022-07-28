@@ -40,8 +40,10 @@
         <li class="item">
             <%# if the item has the completed flag set to true, give it the completed class otherwise just make a span without that class %>
             <% if(items[i].completed === true) {%>
+                <%# put item into span marked as completed %>
                 <span class='completed'><%= items[i].thing %></span>
             <% }else{ %>
+                <%# put item into span %>
                 <span><%= items[i].thing %></span>
             <% } %>    
             <%# show the delete icon %>
@@ -49,11 +51,12 @@
         </li>
     <% } %>
     </ul>
-
+    <%# Left to do section heading %>
     <h2>Left to do: <%= left %></h2>
-
+    <%# heading for add form %>
     <h2>Add A Todo:</h2>
 
+    <%# setup form to add todo items and perform a POST on submit to the route /addTodo %>
     <form action="/addTodo" method="POST">
         <input type="text" placeholder="Thing To Do" name="todoItem">
         <input type="submit">
