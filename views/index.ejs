@@ -1,12 +1,20 @@
+<%# set DOCTYPE to html %>
 <!DOCTYPE html>
+<%# lang set to 'en' %>
 <html lang="en">
+<%# head section of document %>
 <head>
+    <%# set meta tags %>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%# give our page a title %>
     <title>To-do list</title>
+    <%# load font-awesome css for icons, etc %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <%# load our local css %>
     <link rel="stylesheet" href="css/style.css">
+    <%# set the various default browser icons %>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -21,16 +29,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head> -->
+<%# body section of document %>
 <body>
+    <%# title h1 tag and setup the ul %>
     <h1>Todo List: </h1>
+    <%# ul to hold our list items %>
     <ul class="todoItems">
+    <%# loop thru the items array and create an li for each entry %>
     <% for(let i=0; i < items.length; i++) {%>
         <li class="item">
+            <%# if the item has the completed flag set to true, give it the completed class otherwise just make a span without that class %>
             <% if(items[i].completed === true) {%>
                 <span class='completed'><%= items[i].thing %></span>
             <% }else{ %>
                 <span><%= items[i].thing %></span>
             <% } %>    
+            <%# show the delete icon %>
             <span class='fa fa-trash'></span>
         </li>
     <% } %>
@@ -45,7 +59,7 @@
         <input type="submit">
     </form>
     
-
+    <%# script tag to load our js %>
     <script src='js/main.js'></script>
 </body>
 </html>
